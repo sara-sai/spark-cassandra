@@ -1,11 +1,22 @@
 package com.test
 
+import org.apache.spark.sql.Encoders
+
 object Domains {
 
-/*case class Company (CompanyId: String, CompanyName: String, CompanyLocation: String)
-case class Consultant (id: String, nom: String, prenom: String, CompanyName: String)
+case class Music (id: String, Track: String, Artist: String,
+                   Genre: String, BeatsPerMinute: Double,
+                   Energy: Int, Danceability:Int,
+                   LoudnessdB: Int,
+                   Liveness: Int, Valence: Int,
+                   Length: Int, Acousticness: Int,
+                   Speechiness: Int, Popularity: Int)
 
-implicit val encodCompany = Encoders.product[Company]
-implicit val encodConsulatnt = Encoders.product[Consultant]*/
+case class Artist (Artist: String, Count: Long)
+
+implicit val encodMusic = Encoders.product[Music]
+implicit val encodArtist = Encoders.product[Artist]
 
 }
+
+
